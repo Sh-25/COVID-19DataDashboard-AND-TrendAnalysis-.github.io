@@ -21,7 +21,7 @@ This project analyzes and visualizes global COVID-19 data to uncover trends, ass
 
 * **Platform**: Visual Studio Code
 
-* **Data Source**: `COVID-19 Dataset.csv` (structured time-series data from 190+ countries)
+* **Data Source**: `COVID-19 Dataset.csv` 
 
 ## 📊 Key Features
 
