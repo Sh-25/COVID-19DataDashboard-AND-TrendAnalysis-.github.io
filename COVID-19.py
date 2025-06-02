@@ -5,7 +5,6 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score,mean_absolute_error
 
-
 df = pd.read_csv("COVID-19 Dataset.csv")
 print(df.head())
 
@@ -22,7 +21,6 @@ print(df.isnull().sum())
 #  Convert date column to datetime
 df['Date'] = pd.to_datetime(df['Date'])
 
-
 #  Ensure all numeric fields are properly typed
 numeric_columns = [
     'Confirmed', 'Deaths', 'Recovered', 'Active_Cases', 'CFR', 'Recovery_Rate',
@@ -30,7 +28,6 @@ numeric_columns = [
     'Total_vaccinations', 'Tests_Performed', 'Test_Positivity_Rate'
 ]
 print(df[numeric_columns].dtypes)
-
 
 # 📈 Global COVID-19 Trends Over Time
 daily_trends = df.groupby('Date')[['Confirmed', 'Deaths', 'Recovered']].sum()
@@ -47,7 +44,6 @@ plt.grid(True)
 plt.tight_layout()
 plt.xticks(rotation=45)
 plt.show()
-
 
 # 🌍 Top 10 Countries by People Fully Vaccinated
 latest_vax = df.sort_values('Date').groupby('Country/Region')['People_Fully_Vaccinated'].last().dropna()
@@ -103,7 +99,6 @@ plt.yticks(fontsize=12)
 plt.tight_layout()
 sns.despine()
 plt.show()
-
 
 # --- Linear Regression: Predicting Deaths from Confirmed Cases ---
 
